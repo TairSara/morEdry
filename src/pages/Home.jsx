@@ -1,11 +1,14 @@
 import { useEffect } from 'react'
+import { HiMicrophone } from 'react-icons/hi2'
+import { IoNewspaper } from 'react-icons/io5'
+import { BsCameraVideoFill } from 'react-icons/bs'
 import './Home.css'
 
-function Home() {
+function Home({ onNavigate }) {
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
     }
 
     const observer = new IntersectionObserver((entries) => {
@@ -16,7 +19,7 @@ function Home() {
       })
     }, observerOptions)
 
-    const sections = document.querySelectorAll('.about-section, .alert-section, .stats-section')
+    const sections = document.querySelectorAll('.alert-section')
     sections.forEach(section => observer.observe(section))
 
     return () => {
@@ -40,6 +43,9 @@ function Home() {
               <button className="hero-cta primary">צפו בתכנים</button>
               <button className="hero-cta secondary">הצטרפו אלינו</button>
             </div>
+          </div>
+          <div className="hero-icon-container">
+            <img src="/src/images/ICON.png" alt="לוגו המצפן הדרומי" className="hero-icon" />
           </div>
         </div>
       </div>
@@ -66,11 +72,6 @@ function Home() {
             </div>
           </div>
           <div className="about-image-container">
-            <div className="rays-effect">
-              {[...Array(12)].map((_, i) => (
-                <div key={i} className="ray" style={{ '--i': i }}></div>
-              ))}
-            </div>
             <div className="image-wrapper">
               <img src="/src/images/MOR.webp" alt="מור אדרי" className="about-image" />
             </div>
@@ -88,19 +89,54 @@ function Home() {
         </div>
       </div>
 
-      <div className="stats-section">
-        <div className="stats-container">
-          <div className="stat-card">
-            <div className="stat-number">4M+</div>
-            <div className="stat-label">צפיות</div>
+      <div className="media-showcase-section">
+        <div className="media-showcase-container">
+          <div className="media-showcase-header">
+            <h2 className="media-showcase-title">המדיה שלנו</h2>
+            <p className="media-showcase-subtitle">
+              תוכן איכותי ומקצועי במגוון פלטפורמות - רדיו, כתבות וראיונות
+            </p>
           </div>
-          <div className="stat-card">
-            <div className="stat-number">100%</div>
-            <div className="stat-label">עצמאי</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number">#1</div>
-            <div className="stat-label">בדרום</div>
+
+          <div className="media-showcase-grid">
+            <div className="media-showcase-card" onClick={() => onNavigate?.('media')}>
+              <div className="media-showcase-icon-wrapper">
+                <HiMicrophone className="media-showcase-icon" />
+              </div>
+              <h3 className="media-showcase-card-title">תוכניות רדיו</h3>
+              <p className="media-showcase-card-description">
+                שידורים חיים ותוכניות מוקלטות עם אורחים מרתקים ונושאים חמים
+              </p>
+              <div className="media-showcase-card-footer">
+                <span className="media-showcase-link">צפה בכל התוכניות ←</span>
+              </div>
+            </div>
+
+            <div className="media-showcase-card" onClick={() => onNavigate?.('media')}>
+              <div className="media-showcase-icon-wrapper">
+                <IoNewspaper className="media-showcase-icon" />
+              </div>
+              <h3 className="media-showcase-card-title">כתבות</h3>
+              <p className="media-showcase-card-description">
+                כתבות חקירה ודעה מעמיקות על נושאים חברתיים וביטחוניים
+              </p>
+              <div className="media-showcase-card-footer">
+                <span className="media-showcase-link">קרא את הכתבות ←</span>
+              </div>
+            </div>
+
+            <div className="media-showcase-card" onClick={() => onNavigate?.('media')}>
+              <div className="media-showcase-icon-wrapper">
+                <BsCameraVideoFill className="media-showcase-icon" />
+              </div>
+              <h3 className="media-showcase-card-title">ראיונות</h3>
+              <p className="media-showcase-card-description">
+                שיחות עומק עם אנשי מפתח, מובילי דעה ודמויות מרכזיות
+              </p>
+              <div className="media-showcase-card-footer">
+                <span className="media-showcase-link">צפה בראיונות ←</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

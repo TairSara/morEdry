@@ -3,35 +3,48 @@ import './App.css'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Media from './pages/Media'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const handleNavigate = (page) => {
+    setCurrentPage(page)
+    setMenuOpen(false)
+  }
 
   const renderPage = () => {
     switch(currentPage) {
       case 'home':
-        return <Home />
+        return <Home onNavigate={setCurrentPage} />
       case 'about':
         return <About />
+      case 'media':
+        return <Media />
       case 'contact':
         return <Contact />
       default:
-        return <Home />
+        return <Home onNavigate={setCurrentPage} />
     }
   }
 
   return (
     <div className="app">
       <header className="header">
-        <nav className="nav">
-          <a href="#" onClick={() => setCurrentPage('home')}>בית</a>
-          <a href="#" onClick={() => setCurrentPage('about')}>אודות</a>
-          <a href="#" onClick={() => setCurrentPage('contact')}>צור קשר</a>
+        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
+          <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
+          <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
+        </button>
+        <nav className={`nav ${menuOpen ? 'open' : ''}`}>
+          <a href="#" onClick={() => handleNavigate('home')}>בית</a>
+          <a href="#" onClick={() => handleNavigate('about')}>אודות</a>
+          <a href="#" onClick={() => handleNavigate('media')}>מדיה</a>
+          <a href="#" onClick={() => handleNavigate('contact')}>צור קשר</a>
         </nav>
-        <a href="#" className="logo" onClick={() => setCurrentPage('home')}>
-          <img src="/src/images/logoMor.webp" alt="מור אדרי" className="logo-image" />
-        </a>
       </header>
+      {menuOpen && <div className="overlay" onClick={() => setMenuOpen(false)}></div>}
       <main className="main">
         {renderPage()}
       </main>
