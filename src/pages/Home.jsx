@@ -45,7 +45,7 @@ function Home({ onNavigate }) {
             </div>
           </div>
           <div className="hero-icon-container">
-            <img src="/src/images/ICON.png" alt="לוגו המצפן הדרומי" className="hero-icon" />
+            <img src="/src/images/ICON1.gif" alt="לוגו המצפן הדרומי" className="hero-icon" />
           </div>
         </div>
       </div>
@@ -76,16 +76,6 @@ function Home({ onNavigate }) {
               <img src="/src/images/MOR.webp" alt="מור אדרי" className="about-image" />
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="alert-section">
-        <div className="alert-container">
-          <div className="alert-icon">⚠️</div>
-          <h2 className="alert-title">הדרום בסכנה!</h2>
-          <p className="alert-text">
-            אתגרי הביטחון, המשילות וחוסן האזרחים בדרום
-          </p>
         </div>
       </div>
 
