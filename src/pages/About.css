@@ -1,0 +1,136 @@
+.about {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--off-white) 0%, #ffffff 100%);
+}
+
+.about-hero {
+  background-color: var(--black);
+  padding: 6rem 4rem 4rem 4rem;
+  text-align: center;
+}
+
+.about-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  color: var(--red);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.title-underline {
+  width: 120px;
+  height: 6px;
+  background-color: var(--red);
+  margin: 2rem auto 0;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.about-section {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+}
+
+.about-text {
+  font-size: 1.3rem;
+  line-height: 1.9;
+  color: var(--black);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin: 4rem 0;
+}
+
+.about-card {
+  background-color: var(--white);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(220, 10, 10, 0.15);
+  border-color: var(--red);
+}
+
+.card-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--black);
+}
+
+.mission {
+  background: linear-gradient(135deg, var(--red) 0%, #a00808 100%);
+  padding: 4rem 3rem;
+  border-radius: 16px;
+  margin-top: 5rem;
+}
+
+.mission .section-title {
+  color: var(--white);
+}
+
+.mission .about-text {
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 4rem 2rem 3rem 2rem;
+  }
+
+  .about-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .about-text {
+    font-size: 1.1rem;
+  }
+
+  .mission {
+    padding: 3rem 2rem;
+  }
+}

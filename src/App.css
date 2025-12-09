@@ -1,0 +1,126 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1.2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(220, 10, 10, 0.1);
+  border-bottom: 2px solid rgba(220, 10, 10, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-image {
+  height: 70px;
+  width: auto;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(220, 10, 10, 0.2));
+  object-fit: cover;
+  object-position: center;
+  clip-path: inset(8% 0 8% 0);
+}
+
+.logo-image:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 12px rgba(220, 10, 10, 0.35));
+}
+
+.nav {
+  display: flex;
+  gap: 3rem;
+}
+
+.nav a {
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+  right: auto;
+  left: 0;
+}
+
+.nav a:hover {
+  color: #b00808;
+}
+
+.main {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 2rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .logo-image {
+    height: 60px;
+    clip-path: inset(10% 0 10% 0);
+  }
+
+  .nav {
+    gap: 2rem;
+    order: 2;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .nav a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.8rem 1rem;
+  }
+
+  .logo-image {
+    height: 50px;
+    clip-path: inset(12% 0 12% 0);
+  }
+
+  .nav {
+    gap: 1.5rem;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  }
+}

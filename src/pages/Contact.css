@@ -1,0 +1,221 @@
+.contact {
+  min-height: 100vh;
+  background-color: var(--off-white);
+}
+
+.contact-hero {
+  background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
+  padding: 8rem 4rem 6rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(220, 10, 10, 0.1) 0%, transparent 70%);
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.contact-main-title {
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 800;
+  color: var(--white);
+  margin: 0;
+  letter-spacing: -0.03em;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-main-subtitle {
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 800;
+  color: var(--red);
+  margin: 0;
+  letter-spacing: -0.03em;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.intro-text {
+  font-size: 1.5rem;
+  color: var(--black);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.contact-card {
+  background-color: var(--white);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(220, 10, 10, 0.15);
+  border-color: var(--red);
+}
+
+.card-header {
+  margin-bottom: 1.5rem;
+}
+
+.icon-circle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--red);
+  margin: 0;
+}
+
+.contact-link {
+  color: var(--black);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--red);
+}
+
+.contact-info {
+  color: var(--black);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.contact-form-section {
+  background: linear-gradient(135deg, var(--red) 0%, #a00808 100%);
+  padding: 4rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(220, 10, 10, 0.2);
+}
+
+.form-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--white);
+  text-align: center;
+  margin: 0 0 3rem 0;
+}
+
+.contact-form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-family: 'Assistant', sans-serif;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--black);
+  transition: all 0.3s ease;
+  direction: rtl;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  background-color: var(--white);
+  border-color: var(--white);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: 'Assistant', sans-serif;
+  background-color: var(--white);
+  color: var(--red);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.form-submit:hover {
+  background-color: var(--black);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    padding: 5rem 2rem 4rem 2rem;
+  }
+
+  .contact-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-form-section {
+    padding: 3rem 2rem;
+  }
+
+  .intro-text {
+    font-size: 1.2rem;
+  }
+}
