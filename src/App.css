@@ -357,6 +357,7 @@
     flex-direction: column;
     width: 100%;
     position: static;
+    align-items: stretch;
   }
 
   .nav-dropdown > a {
@@ -365,13 +366,17 @@
     border-bottom: 1px solid rgba(26, 58, 92, 0.08);
     font-size: 1.2rem;
     font-weight: 600;
-    text-align: right;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
   }
 
   .nav-dropdown > a:hover {
     background: rgba(220, 10, 10, 0.05);
-    padding-right: 2.5rem;
     color: var(--red);
+    transform: none;
   }
 
   .dropdown-menu {

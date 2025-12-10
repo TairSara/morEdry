@@ -136,13 +136,40 @@
 .article-card {
   background: var(--white);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 0;
   border: 2px solid rgba(220, 10, 10, 0.1);
   transition: all 0.4s ease;
   animation: fadeInScale 0.6s ease-out both;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+}
+
+.article-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.article-card:hover .article-image {
+  transform: scale(1.1);
+}
+
+.article-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .article-card::before {
@@ -213,7 +240,16 @@
   font-size: 1rem;
   color: #666;
   line-height: 1.6;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.article-summary {
+  font-size: 0.95rem;
+  color: #777;
+  line-height: 1.7;
   margin: 0 0 1.5rem 0;
+  flex: 1;
 }
 
 .read-btn {
@@ -226,12 +262,160 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: "Assistant", sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  align-self: flex-start;
 }
 
 .read-btn:hover {
   background: var(--red);
   color: var(--white);
   transform: translateX(-5px);
+}
+
+/* Media Preview Grid */
+.article-media-preview {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+  max-height: 300px;
+}
+
+.media-preview-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  aspect-ratio: 16/9;
+}
+
+.media-preview-item.full-width {
+  grid-column: 1 / -1;
+  max-height: 300px;
+}
+
+.media-preview-item:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.preview-image,
+.preview-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(220, 10, 10, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.media-preview-item:hover .video-play-overlay {
+  background: rgba(220, 10, 10, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Media Modal */
+.media-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+  padding: 2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: var(--red);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.modal-close:hover {
+  background: #b00808;
+  transform: rotate(90deg);
+}
+
+.modal-image,
+.modal-video {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 /* Responsive */
@@ -251,6 +435,21 @@
 
   .article-card {
     padding: 1.8rem 1.5rem;
+  }
+
+  .article-media-preview {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .modal-close {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .media-modal {
+    padding: 1rem;
   }
 }
 
