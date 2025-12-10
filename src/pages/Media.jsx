@@ -142,8 +142,8 @@ function Media() {
           <button className="carousel-btn prev" onClick={prevRadio}>❮</button>
           <div className="carousel-content">
             <div className="radio-card">
-              <div className="radio-image">
-                <div className="radio-icon">📻</div>
+              <div className="radio-cover-image">
+                <img src="/src/images/RADIOCOVER.jpeg" alt="Radio Cover" className="radio-cover" />
               </div>
               <h3 className="radio-title">{radioPrograms[currentRadioIndex].title}</h3>
               <p className="radio-description">{radioPrograms[currentRadioIndex].description}</p>
