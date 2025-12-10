@@ -144,6 +144,10 @@ function Media() {
             <div className="radio-card">
               <div className="radio-cover-image">
                 <img src="/src/images/RADIOCOVER.jpeg" alt="Radio Cover" className="radio-cover" />
+                <audio controls className="radio-audio">
+                  <source src="/src/images/radio1.mp3" type="audio/mpeg" />
+                  הדפדפן שלך לא תומך בנגן אודיו.
+                </audio>
               </div>
               <h3 className="radio-title">{radioPrograms[currentRadioIndex].title}</h3>
               <p className="radio-description">{radioPrograms[currentRadioIndex].description}</p>

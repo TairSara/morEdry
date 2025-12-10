@@ -87,7 +87,14 @@ function App() {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <a href="#" onClick={(e) => { e.preventDefault(); setMediaDropdownOpen(!mediaDropdownOpen); }}>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMediaDropdownOpen(!mediaDropdownOpen);
+                }}
+                className="media-dropdown-link"
+              >
                 מדיה
               </a>
               {mediaDropdownOpen && (
