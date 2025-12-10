@@ -130,7 +130,7 @@ function Home({ onNavigate }) {
           </div>
 
           <div className="media-showcase-grid">
-            <div className="media-showcase-card" onClick={() => onNavigate?.('media')}>
+            <div className="media-showcase-card" onClick={() => onNavigate?.('radio-programs')}>
               <div className="media-showcase-icon-wrapper">
                 <HiMicrophone className="media-showcase-icon" />
               </div>
@@ -143,7 +143,7 @@ function Home({ onNavigate }) {
               </div>
             </div>
 
-            <div className="media-showcase-card" onClick={() => onNavigate?.('media')}>
+            <div className="media-showcase-card" onClick={() => onNavigate?.('articles')}>
               <div className="media-showcase-icon-wrapper">
                 <IoNewspaper className="media-showcase-icon" />
               </div>
@@ -156,7 +156,7 @@ function Home({ onNavigate }) {
               </div>
             </div>
 
-            <div className="media-showcase-card" onClick={() => onNavigate?.('media')}>
+            <div className="media-showcase-card" onClick={() => onNavigate?.('interviews-tv')}>
               <div className="media-showcase-icon-wrapper">
                 <BsCameraVideoFill className="media-showcase-icon" />
               </div>

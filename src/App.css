@@ -154,6 +154,60 @@
   color: #1a3a5c;
 }
 
+/* Dropdown Menu */
+.nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  min-width: 250px;
+  padding: 0.5rem 0;
+  z-index: 1000;
+  animation: dropdownFade 0.3s ease;
+  border: 2px solid rgba(220, 10, 10, 0.1);
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: #1a3a5c;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(220, 10, 10, 0.05);
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(220, 10, 10, 0.05);
+  color: var(--red);
+  padding-right: 2rem;
+}
+
 /* Story Avatar Button */
 .story-avatar-container {
   display: flex;
@@ -179,16 +233,6 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  animation: pulse-ring 2s ease-in-out infinite;
-}
-
-@keyframes pulse-ring {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(220, 10, 10, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 0 10px rgba(220, 10, 10, 0);
-  }
 }
 
 .story-avatar-nav {
@@ -307,6 +351,50 @@
     background: rgba(220, 10, 10, 0.05);
     padding-right: 2.5rem;
     color: var(--red);
+  }
+
+  .nav-dropdown {
+    flex-direction: column;
+    width: 100%;
+    position: static;
+  }
+
+  .nav-dropdown > a {
+    width: 100%;
+    padding: 1.3rem 2rem;
+    border-bottom: 1px solid rgba(26, 58, 92, 0.08);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .nav-dropdown > a:hover {
+    background: rgba(220, 10, 10, 0.05);
+    padding-right: 2.5rem;
+    color: var(--red);
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    margin-top: 0;
+    padding: 0;
+    background: rgba(220, 10, 10, 0.03);
+    border-radius: 0;
+    width: 100%;
+    animation: none;
+  }
+
+  .dropdown-menu a {
+    padding: 1rem 2rem 1rem 3rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(220, 10, 10, 0.08);
+  }
+
+  .dropdown-menu a:hover {
+    padding-right: 2rem;
+    padding-left: 3.5rem;
   }
 
   .overlay {

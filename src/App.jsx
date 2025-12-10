@@ -2,21 +2,42 @@ import { useState } from 'react'
 import './App.css'
 import Home from './pages/Home'
 import About from './pages/About'
+import CivilDocumentation from './pages/CivilDocumentation'
 import Contact from './pages/Contact'
 import Media from './pages/Media'
+import RadioPrograms from './pages/RadioPrograms'
+import ArticlesPage from './pages/ArticlesPage'
+import InterviewsTV from './pages/InterviewsTV'
 import Support from './pages/Support'
 import WeeklyStory from './components/WeeklyStory'
+import ChatBot from './components/ChatBot'
 import { FaFacebookF, FaTwitter, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
   const [menuOpen, setMenuOpen] = useState(false)
   const [showStory, setShowStory] = useState(false)
+  const [mediaDropdownOpen, setMediaDropdownOpen] = useState(false)
+  const [closeTimeout, setCloseTimeout] = useState(null)
 
   const handleNavigate = (page) => {
     setCurrentPage(page)
     setMenuOpen(false)
     setShowStory(false)
+    setMediaDropdownOpen(false)
+    if (closeTimeout) clearTimeout(closeTimeout)
+  }
+
+  const handleMouseEnter = () => {
+    if (closeTimeout) clearTimeout(closeTimeout)
+    setMediaDropdownOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setMediaDropdownOpen(false)
+    }, 300)
+    setCloseTimeout(timeout)
   }
 
   const renderPage = () => {
@@ -27,8 +48,16 @@ function App() {
         return <About />
       case 'media':
         return <Media />
+      case 'radio-programs':
+        return <RadioPrograms />
+      case 'articles':
+        return <ArticlesPage />
+      case 'interviews-tv':
+        return <InterviewsTV />
       case 'support':
         return <Support />
+      case 'civil-documentation':
+        return <CivilDocumentation />
       case 'contact':
         return <Contact />
       default:
@@ -53,7 +82,23 @@ function App() {
           <nav className={`nav ${menuOpen ? 'open' : ''}`}>
             <a href="#" onClick={() => handleNavigate('home')}>בית</a>
             <a href="#" onClick={() => handleNavigate('about')}>אודות</a>
-            <a href="#" onClick={() => handleNavigate('media')}>מדיה</a>
+            <div
+              className="nav-dropdown"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <a href="#" onClick={(e) => { e.preventDefault(); setMediaDropdownOpen(!mediaDropdownOpen); }}>
+                מדיה
+              </a>
+              {mediaDropdownOpen && (
+                <div className="dropdown-menu">
+                  <a href="#" onClick={() => handleNavigate('radio-programs')}>תוכניות רדיו</a>
+                  <a href="#" onClick={() => handleNavigate('articles')}>כתבות ומאמרים</a>
+                  <a href="#" onClick={() => handleNavigate('interviews-tv')}>ראיונות ותוכניות טלוויזיה</a>
+                </div>
+              )}
+            </div>
+            <a href="#" onClick={() => handleNavigate('civil-documentation')}>תיעוד אזרחי</a>
             <a href="#" onClick={() => handleNavigate('contact')}>צור קשר</a>
             <a href="#" onClick={() => handleNavigate('support')} className="support-link">מצטרפים למאבק</a>
             <div className="social-icons-mobile">
@@ -83,6 +128,7 @@ function App() {
       <main className="main">
         {renderPage()}
       </main>
+      <ChatBot onNavigate={setCurrentPage} />
     </div>
   )
 }
