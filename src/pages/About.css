@@ -811,6 +811,7 @@
 
   .hero-text {
     text-align: center;
+    width: 100%;
   }
 
   .hero-profile-image {
@@ -818,9 +819,20 @@
     height: 160px;
   }
 
+  .about-hero-title {
+    white-space: nowrap;
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
+  .about-hero-subtitle,
   .hero-subtitle {
     white-space: normal;
     border-right: 3px solid var(--red);
+    padding-right: 0.8rem;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: right;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
   }
 
   .about-story-section,
@@ -896,7 +908,7 @@
 
 @media (max-width: 480px) {
   .about-hero {
-    padding: 2rem 6rem;
+    padding: 2rem 1rem;
   }
 
   .hero-profile-image {
@@ -904,10 +916,21 @@
     height: 140px;
   }
 
+  .about-hero-title {
+    white-space: nowrap;
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .about-hero-subtitle,
   .hero-subtitle {
     white-space: normal;
     padding-right: 0.8rem;
     border-right: 3px solid var(--red);
+    max-width: 95%;
+    margin: 0 auto;
+    text-align: right;
+    line-height: 1.6;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
   }
 
   .about-story-section,

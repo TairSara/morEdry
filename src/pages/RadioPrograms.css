@@ -237,45 +237,7 @@
 }
 
 .radio-item:hover .radio-item-image {
-  transform: scale(1.1);
-}
-
-.radio-item-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.radio-item:hover .radio-item-overlay {
-  opacity: 1;
-}
-
-.play-button {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: var(--white);
-  color: var(--red);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  padding-right: 5px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-
-.play-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 15px 40px rgba(220, 10, 10, 0.5);
+  transform: scale(1.05);
 }
 
 .radio-item-content {
@@ -362,58 +324,69 @@
 
 @media (max-width: 768px) {
   .media-hero {
-    padding: 6rem 1.5rem 3rem 1.5rem;
+    padding: 3rem 1.5rem 2.5rem 1.5rem;
   }
 
-  .media-content-section {
-    padding: 4rem 1.5rem;
+  .media-hero-title {
+    font-size: 2rem;
   }
 
-  .radio-controls {
-    gap: 1rem;
-  }
-
-  .filter-buttons,
-  .sort-buttons {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .radio-item {
-    padding: 1.5rem;
-    gap: 1.5rem;
-  }
-
-  .radio-item-cover {
-    height: 250px;
-  }
-
-  .radio-item-title {
-    font-size: 1.5rem;
-  }
-
-  .radio-item-description {
+  .media-hero-subtitle {
     font-size: 1rem;
-  }
-
-  .radio-item-meta {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .media-hero {
-    padding: 5rem 1rem 2rem 1rem;
   }
 
   .media-content-section {
     padding: 3rem 1rem;
   }
 
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-title::after {
+    width: 60px;
+    height: 3px;
+  }
+
+  .radio-section {
+    border-radius: 16px;
+  }
+
+  .radio-header {
+    margin-bottom: 2rem;
+  }
+
+  .radio-controls {
+    gap: 1rem;
+  }
+
+  .control-label {
+    font-size: 0.95rem;
+    margin-left: 0;
+  }
+
+  .filter-buttons,
+  .sort-buttons {
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .filter-btn,
+  .sort-btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+  }
+
+  .radio-list {
+    gap: 1.5rem;
+  }
+
   .radio-item {
     padding: 1.2rem;
-    gap: 1rem;
+    gap: 1.2rem;
+    border-radius: 14px;
   }
 
   .radio-item-cover {
@@ -424,17 +397,120 @@
     font-size: 1.3rem;
   }
 
+  .radio-item-category {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
   .radio-item-description {
     font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .radio-item-meta {
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .no-results {
+    padding: 3rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .media-hero {
+    padding: 2.5rem 1rem 2rem 1rem;
+  }
+
+  .media-hero-title {
+    font-size: 1.7rem;
+  }
+
+  .media-hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .media-content-section {
+    padding: 2.5rem 0.8rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title::after {
+    width: 50px;
+    height: 2px;
+  }
+
+  .radio-controls {
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+
+  .control-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .filter-buttons,
+  .sort-buttons {
+    gap: 0.5rem;
   }
 
   .filter-btn,
   .sort-btn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 18px;
+    border-width: 1.5px;
   }
 
-  .control-label {
+  .radio-list {
+    gap: 1.2rem;
+  }
+
+  .radio-item {
+    padding: 1rem;
+    gap: 1rem;
+    border-radius: 12px;
+  }
+
+  .radio-item-cover {
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .radio-item-header {
+    gap: 0.8rem;
+  }
+
+  .radio-item-title {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  .radio-item-category {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 16px;
+  }
+
+  .radio-item-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .radio-item-meta {
+    gap: 0.35rem;
+    font-size: 0.85rem;
+  }
+
+  .no-results {
+    padding: 2.5rem 1rem;
     font-size: 1rem;
   }
 }

@@ -26,27 +26,6 @@ function InterviewsTV() {
     }
   ]
 
-  const tvPrograms = [
-    {
-      id: 1,
-      title: "המצפן השבועי",
-      description: "סיכום שבועי עם הנושאים החמים ביותר",
-      views: "120K"
-    },
-    {
-      id: 2,
-      title: "דוקו דרומי",
-      description: "סדרת דוקו על חיי היומיום בדרום ישראל",
-      views: "95K"
-    },
-    {
-      id: 3,
-      title: "בלתי מסונן",
-      description: "שיחות חדות ובלתי אמצעיות עם דמויות מפתח",
-      views: "150K"
-    }
-  ]
-
   useEffect(() => {
     const observerOptions = {
       threshold: 0.15,
@@ -74,12 +53,12 @@ function InterviewsTV() {
       <div className="media-hero">
         <div className="media-hero-content">
           <h1 className="media-hero-title">ראיונות וטלוויזיה</h1>
-          <p className="media-hero-subtitle">תוכניות טלוויזיה וראיונות מעמיקים</p>
+          <p className="media-hero-subtitle">ראיונות מעמיקים עם דמויות מפתח</p>
         </div>
       </div>
 
       <div className="media-content-section interviews-section">
-        <h2 className="section-title">ראיונות</h2>
+        <h2 className="section-title">ראיונות וטלוויזיה</h2>
         <div className="interviews-grid">
           {interviews.map((interview, index) => (
             <div key={interview.id} className="interview-card" style={{ animationDelay: `${index * 0.15}s` }}>
@@ -91,21 +70,6 @@ function InterviewsTV() {
                 <p className="interview-topic">{interview.topic}</p>
                 <span className="interview-duration">🎤 {interview.duration}</span>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="media-content-section tv-section">
-        <h2 className="section-title">תוכניות טלוויזיה</h2>
-        <div className="tv-grid">
-          {tvPrograms.map((program) => (
-            <div key={program.id} className="tv-card">
-              <div className="tv-icon">📺</div>
-              <h3 className="tv-title">{program.title}</h3>
-              <p className="tv-description">{program.description}</p>
-              <div className="tv-views">👁 {program.views} צפיות</div>
-              <button className="watch-btn">צפה עכשיו</button>
             </div>
           ))}
         </div>

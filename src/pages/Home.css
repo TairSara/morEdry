@@ -535,10 +535,10 @@ video {
   bottom: 0;
   background-image: linear-gradient(
       90deg,
-      rgba(26, 58, 92, 0.02) 1px,
+      rgba(220, 10, 10, 0.02) 1px,
       transparent 1px
     ),
-    linear-gradient(rgba(26, 58, 92, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(220, 10, 10, 0.02) 1px, transparent 1px);
   background-size: 40px 40px;
   opacity: 0.5;
   pointer-events: none;
@@ -560,10 +560,10 @@ video {
 .media-showcase-title {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 800;
-  color: #1a3a5c;
+  color: var(--red);
   margin: 0 0 1rem 0;
   letter-spacing: -0.02em;
-  text-shadow: 1px 1px 4px rgba(26, 58, 92, 0.2);
+  text-shadow: 1px 1px 4px rgba(220, 10, 10, 0.2);
 }
 
 .media-showcase-subtitle {
@@ -588,7 +588,7 @@ video {
   text-align: center;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid rgba(26, 58, 92, 0.08);
+  border: 2px solid rgba(220, 10, 10, 0.08);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
   position: relative;
   overflow: hidden;
@@ -601,7 +601,7 @@ video {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(26, 58, 92, 0.03) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(220, 10, 10, 0.03) 0%, transparent 100%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -612,20 +612,20 @@ video {
 
 .media-showcase-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 20px 60px rgba(26, 58, 92, 0.15);
-  border-color: #1a3a5c;
+  box-shadow: 0 20px 60px rgba(220, 10, 10, 0.15);
+  border-color: var(--red);
 }
 
 .media-showcase-icon-wrapper {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #1a3a5c 0%, #2d5a8c 100%);
+  background: transparent;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 2rem;
-  box-shadow: 0 10px 30px rgba(26, 58, 92, 0.25);
+  box-shadow: none;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -638,14 +638,14 @@ video {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  background: transparent;
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
 .media-showcase-card:hover .media-showcase-icon-wrapper {
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 15px 40px rgba(26, 58, 92, 0.35);
+  box-shadow: none;
 }
 
 .media-showcase-card:hover .media-showcase-icon-wrapper::before {
@@ -654,7 +654,7 @@ video {
 
 .media-showcase-icon {
   font-size: 2.5rem;
-  color: var(--white);
+  color: var(--red);
   transition: all 0.3s ease;
 }
 
@@ -671,7 +671,7 @@ video {
 }
 
 .media-showcase-card:hover .media-showcase-card-title {
-  color: #1a3a5c;
+  color: var(--red);
 }
 
 .media-showcase-card-description {
@@ -1581,7 +1581,7 @@ video {
     padding: 0;
     width: 100%;
     justify-content: center;
-    order: -1;
+    order: 2;
   }
 
   .hero-icon {
@@ -1769,13 +1769,14 @@ video {
 
   .hero-content {
     flex-direction: column-reverse;
-    padding: 2rem 1.5rem;
+    padding: 1rem 1.5rem 2rem 1.5rem;
     gap: 2rem;
   }
 
   .hero-icon-container {
-    order: -1;
-    margin-bottom: 1rem;
+    order: 2;
+    margin-bottom: 0;
+    margin-top: 1rem;
   }
 
   .hero-icon {
@@ -1787,6 +1788,7 @@ video {
     padding: 0 0.5rem;
     text-align: center;
     order: 1;
+    margin-top: 0;
   }
 
   .hero-title {
@@ -2145,13 +2147,14 @@ video {
 
   .hero-content {
     flex-direction: column-reverse;
-    padding: 1.5rem 1rem;
+    padding: 0.5rem 1rem 1.5rem 1rem;
     gap: 1.5rem;
   }
 
   .hero-icon-container {
-    order: -1;
-    margin-bottom: 1rem;
+    order: 2;
+    margin-bottom: 0;
+    margin-top: 1rem;
   }
 
   .hero-icon {
@@ -2162,6 +2165,7 @@ video {
     padding: 0 0.25rem;
     text-align: center;
     order: 1;
+    margin-top: 0;
   }
 
   .hero-title {

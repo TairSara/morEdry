@@ -9,8 +9,12 @@ import RadioPrograms from './pages/RadioPrograms'
 import ArticlesPage from './pages/ArticlesPage'
 import InterviewsTV from './pages/InterviewsTV'
 import Support from './pages/Support'
+import Accessibility from './pages/Accessibility'
+import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
 import WeeklyStory from './components/WeeklyStory'
 import ChatBot from './components/ChatBot'
+import Footer from './components/Footer'
 import { FaFacebookF, FaTwitter, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa'
 
 function App() {
@@ -29,15 +33,21 @@ function App() {
   }
 
   const handleMouseEnter = () => {
-    if (closeTimeout) clearTimeout(closeTimeout)
-    setMediaDropdownOpen(true)
+    // Only work on desktop
+    if (window.innerWidth > 1024) {
+      if (closeTimeout) clearTimeout(closeTimeout)
+      setMediaDropdownOpen(true)
+    }
   }
 
   const handleMouseLeave = () => {
-    const timeout = setTimeout(() => {
-      setMediaDropdownOpen(false)
-    }, 300)
-    setCloseTimeout(timeout)
+    // Only work on desktop
+    if (window.innerWidth > 1024) {
+      const timeout = setTimeout(() => {
+        setMediaDropdownOpen(false)
+      }, 300)
+      setCloseTimeout(timeout)
+    }
   }
 
   const renderPage = () => {
@@ -60,6 +70,12 @@ function App() {
         return <CivilDocumentation />
       case 'contact':
         return <Contact />
+      case 'accessibility':
+        return <Accessibility />
+      case 'privacy':
+        return <Privacy />
+      case 'terms':
+        return <Terms />
       default:
         return <Home onNavigate={setCurrentPage} />
     }
@@ -86,6 +102,12 @@ function App() {
               className="nav-dropdown"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
+              onClick={(e) => {
+                // Allow clicks on the dropdown itself in mobile
+                if (window.innerWidth <= 1024) {
+                  e.stopPropagation();
+                }
+              }}
             >
               <a
                 href="#"
@@ -109,11 +131,10 @@ function App() {
             <a href="#" onClick={() => handleNavigate('contact')}>צור קשר</a>
             <a href="#" onClick={() => handleNavigate('support')} className="support-link">מצטרפים למאבק</a>
             <div className="social-icons-mobile">
-              <a href="#" className="social-icon" aria-label="Facebook"><FaFacebookF /></a>
-              <a href="#" className="social-icon" aria-label="Twitter"><FaTwitter /></a>
-              <a href="#" className="social-icon" aria-label="TikTok"><FaTiktok /></a>
-              <a href="#" className="social-icon" aria-label="Instagram"><FaInstagram /></a>
-              <a href="#" className="social-icon" aria-label="WhatsApp"><FaWhatsapp /></a>
+              <a href="https://www.facebook.com/mwr.sywn.dry/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook"><FaFacebookF /></a>
+              <a href="https://www.instagram.com/mor.edery/?hl=he" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram"><FaInstagram /></a>
+              <a href="https://www.tiktok.com/discover/%D7%9E%D7%95%D7%A8-%D7%90%D7%93%D7%A8%D7%99-%D7%94%D7%9E%D7%A6%D7%A4%D7%9F-%D7%94%D7%93%D7%A8%D7%95%D7%9E%D7%99" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="TikTok"><FaTiktok /></a>
+              <a href="https://wa.me/972545531616" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="WhatsApp"><FaWhatsapp /></a>
             </div>
           </nav>
         </div>
@@ -123,11 +144,10 @@ function App() {
           <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
         </button>
         <div className="social-icons">
-          <a href="#" className="social-icon" aria-label="Facebook"><FaFacebookF /></a>
-          <a href="#" className="social-icon" aria-label="Twitter"><FaTwitter /></a>
-          <a href="#" className="social-icon" aria-label="TikTok"><FaTiktok /></a>
-          <a href="#" className="social-icon" aria-label="Instagram"><FaInstagram /></a>
-          <a href="#" className="social-icon" aria-label="WhatsApp"><FaWhatsapp /></a>
+          <a href="https://www.facebook.com/mwr.sywn.dry/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook"><FaFacebookF /></a>
+          <a href="https://www.instagram.com/mor.edery/?hl=he" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram"><FaInstagram /></a>
+          <a href="https://www.tiktok.com/discover/%D7%9E%D7%95%D7%A8-%D7%90%D7%93%D7%A8%D7%99-%D7%94%D7%9E%D7%A6%D7%A4%D7%9F-%D7%94%D7%93%D7%A8%D7%95%D7%9E%D7%99" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="TikTok"><FaTiktok /></a>
+          <a href="https://wa.me/972545531616" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="WhatsApp"><FaWhatsapp /></a>
         </div>
       </header>
       {menuOpen && <div className="overlay" onClick={() => setMenuOpen(false)}></div>}
@@ -135,6 +155,7 @@ function App() {
       <main className="main">
         {renderPage()}
       </main>
+      <Footer onNavigate={setCurrentPage} />
       <ChatBot onNavigate={setCurrentPage} />
     </div>
   )

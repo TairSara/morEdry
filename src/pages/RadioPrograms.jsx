@@ -10,7 +10,7 @@ function RadioPrograms() {
       id: 1,
       title: "המצפן הדרומי",
       description: "תכנית רדיו עם מור אדרי, המציגה את הנושאים החמים בדרום ישראל - אקטואליה, פוליטיקה, חברה וביטחון אזרחי",
-      coverImage: "/src/images/RADIOCOVER.jpeg",
+      coverImage: "/src/images/Radio Cover.jpeg",
       audioFile: "/src/images/radio1.mp3",
       duration: "15:30",
       date: "2025-12-10",
@@ -111,9 +111,6 @@ function RadioPrograms() {
             <div key={program.id} className="radio-item" style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="radio-item-cover">
                 <img src={program.coverImage} alt={program.title} className="radio-item-image" />
-                <div className="radio-item-overlay">
-                  <div className="play-button">▶</div>
-                </div>
               </div>
 
               <div className="radio-item-content">
