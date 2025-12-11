@@ -9,21 +9,21 @@ function Media() {
       id: 1,
       title: "המצפן הבוקר",
       description: "תכנית בוקר יומית עם סיקור אקטואלי ואורחים מרתקים",
-      image: "/src/images/radio1.jpg",
+      image: "/images/radio1.jpg",
       duration: "2 שעות"
     },
     {
       id: 2,
       title: "דרום בפוקוס",
       description: "עומק בנושאי הדרום - ביטחון, משילות וחברה",
-      image: "/src/images/radio2.jpg",
+      image: "/images/radio2.jpg",
       duration: "1 שעה"
     },
     {
       id: 3,
       title: "שיחות ערב",
       description: "שיחות לא מסוננות על הנושאים החמים ביותר",
-      image: "/src/images/radio3.jpg",
+      image: "/images/radio3.jpg",
       duration: "1.5 שעות"
     }
   ]
@@ -58,21 +58,21 @@ function Media() {
       name: "ראש העיר באר שבע",
       topic: "עתיד העיר ואתגרי הפיתוח",
       duration: "45 דקות",
-      thumbnail: "/src/images/interview1.jpg"
+      thumbnail: "/images/interview1.jpg"
     },
     {
       id: 2,
       name: "מפקד עוטף עזה",
       topic: "מצב הביטחון והמוכנות",
       duration: "35 דקות",
-      thumbnail: "/src/images/interview2.jpg"
+      thumbnail: "/images/interview2.jpg"
     },
     {
       id: 3,
       name: "מנהלת ארגון נפגעי טרור",
       topic: "החוסן האזרחי בדרום",
       duration: "40 דקות",
-      thumbnail: "/src/images/interview3.jpg"
+      thumbnail: "/images/interview3.jpg"
     }
   ]
 
@@ -143,9 +143,9 @@ function Media() {
           <div className="carousel-content">
             <div className="radio-card">
               <div className="radio-cover-image">
-                <img src="/src/images/RADIOCOVER.jpeg" alt="Radio Cover" className="radio-cover" />
+                <img src="/images/RADIOCOVER.jpeg" alt="Radio Cover" className="radio-cover" />
                 <audio controls className="radio-audio">
-                  <source src="/src/images/radio1.mp3" type="audio/mpeg" />
+                  <source src="/images/radio1.mp3" type="audio/mpeg" />
                   הדפדפן שלך לא תומך בנגן אודיו.
                 </audio>
               </div>

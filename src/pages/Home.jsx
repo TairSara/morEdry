@@ -17,11 +17,11 @@ function Home({ onNavigate }) {
       date: '02/03/2025',
       link: 'https://news.walla.co.il/item/3731104',
       media: [
-        { type: 'image', src: '/src/images/1.jpeg' },
-        { type: 'image', src: '/src/images/2.jpeg' },
-        { type: 'image', src: '/src/images/3.jpeg' },
-        { type: 'image', src: '/src/images/4.jpeg' },
-        { type: 'image', src: '/src/images/5.jpeg' }
+        { type: 'image', src: '/images/1.jpeg' },
+        { type: 'image', src: '/images/2.jpeg' },
+        { type: 'image', src: '/images/3.jpeg' },
+        { type: 'image', src: '/images/4.jpeg' },
+        { type: 'image', src: '/images/5.jpeg' }
       ]
     },
     {
@@ -31,9 +31,9 @@ function Home({ onNavigate }) {
       date: '17/11/2025',
       link: 'https://www.mako.co.il/men-men_news/Article-0994ebc0ed09a91027.htm',
       media: [
-        { type: 'video', src: '/src/images/6.mp4', poster: '/src/images/8.jpeg' },
-        { type: 'video', src: '/src/images/7.mp4', poster: '/src/images/8.jpeg' },
-        { type: 'image', src: '/src/images/8.jpeg' }
+        { type: 'video', src: '/images/6.mp4', poster: '/images/8.jpeg' },
+        { type: 'video', src: '/images/7.mp4', poster: '/images/8.jpeg' },
+        { type: 'image', src: '/images/8.jpeg' }
       ]
     }
   ]
@@ -86,7 +86,7 @@ function Home({ onNavigate }) {
             </div>
           </div>
           <div className="hero-icon-container">
-            <img src="/src/images/ICON1.gif" alt="לוגו המצפן הדרומי" className="hero-icon" />
+            <img src="/images/ICON1.gif" alt="לוגו המצפן הדרומי" className="hero-icon" />
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@ function Home({ onNavigate }) {
           </div>
           <div className="about-image-container">
             <div className="image-wrapper">
-              <img src="/src/images/MOR.webp" alt="מור אדרי" className="about-image" />
+              <img src="/images/MOR.webp" alt="מור אדרי" className="about-image" />
             </div>
           </div>
         </div>

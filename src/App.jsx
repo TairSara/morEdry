@@ -86,12 +86,12 @@ function App() {
       <header className="header">
         <div className="nav-logo-container">
           <div className="logo">
-            <img src="/src/images/logo.png" alt="לוגו" className="logo-image" />
+            <img src="/images/logo.png" alt="לוגו" className="logo-image" />
           </div>
           {!showStory && (
             <div className="story-avatar-container" onClick={() => { setShowStory(true); setMenuOpen(false); }}>
               <div className="story-ring">
-                <img src="/src/images/MOR.webp" alt="הסטורי השבועי" className="story-avatar-nav" />
+                <img src="/images/MOR.webp" alt="הסטורי השבועי" className="story-avatar-nav" />
               </div>
             </div>
           )}

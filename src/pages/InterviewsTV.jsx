@@ -8,21 +8,21 @@ function InterviewsTV() {
       name: "ראש העיר באר שבע",
       topic: "עתיד העיר ואתגרי הפיתוח",
       duration: "45 דקות",
-      thumbnail: "/src/images/interview1.jpg"
+      thumbnail: "/images/interview1.jpg"
     },
     {
       id: 2,
       name: "מפקד עוטף עזה",
       topic: "מצב הביטחון והמוכנות",
       duration: "35 דקות",
-      thumbnail: "/src/images/interview2.jpg"
+      thumbnail: "/images/interview2.jpg"
     },
     {
       id: 3,
       name: "מנהלת ארגון נפגעי טרור",
       topic: "החוסן האזרחי בדרום",
       duration: "40 דקות",
-      thumbnail: "/src/images/interview3.jpg"
+      thumbnail: "/images/interview3.jpg"
     }
   ]
 

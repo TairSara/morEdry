@@ -4,15 +4,15 @@ import { FaFacebookF, FaTwitter, FaWhatsapp, FaTimes, FaChevronLeft, FaChevronRi
 
 const WeeklyStory = ({ onClose }) => {
   const stories = [
-    { type: 'image', src: '/src/images/story_first.jpeg' },
-    { type: 'image', src: '/src/images/story1.jpeg' },
-    { type: 'video', src: '/src/images/story1.1.mp4' },
-    { type: 'image', src: '/src/images/story2.jpeg' },
-    { type: 'image', src: '/src/images/story3.jpeg' },
-    { type: 'video', src: '/src/images/story4.mp4' },
-    { type: 'video', src: '/src/images/story5.mp4' },
-    { type: 'video', src: '/src/images/story6.mp4' },
-    { type: 'image', src: '/src/images/story7.jpeg' }
+    { type: 'image', src: '/images/story_first.jpeg' },
+    { type: 'image', src: '/images/story1.jpeg' },
+    { type: 'video', src: '/images/story1.1.mp4' },
+    { type: 'image', src: '/images/story2.jpeg' },
+    { type: 'image', src: '/images/story3.jpeg' },
+    { type: 'video', src: '/images/story4.mp4' },
+    { type: 'video', src: '/images/story5.mp4' },
+    { type: 'video', src: '/images/story6.mp4' },
+    { type: 'image', src: '/images/story7.jpeg' }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -144,7 +144,7 @@ const WeeklyStory = ({ onClose }) => {
           {/* Header */}
           <div className="story-header">
             <div className="story-header-info">
-              <img src="/src/images/MOR.webp" alt="Logo" className="story-avatar" />
+              <img src="/images/MOR.webp" alt="Logo" className="story-avatar" />
               <div className="story-header-text">
                 <span className="story-username">מוֹר אדרי</span>
                 <span className="story-highlight-name">הסטורי השבועי</span>

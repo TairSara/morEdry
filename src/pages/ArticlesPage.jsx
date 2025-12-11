@@ -12,14 +12,14 @@ function ArticlesPage() {
       date: "02.03.2025",
       readTime: "5 דקות קריאה",
       url: "https://news.walla.co.il/item/3731104",
-      image: "/src/images/1.jpeg",
+      image: "/images/1.jpeg",
       summary: "אירוע שוד חמור במפעל בבאר שבע שבו גנבו בשר אנטריקוט בשווי כחצי מיליון שקלים. המקרה מדגיש את משבר הביטחון האזרחי בדרום ואת הקריסה המתמשכת של החוק והסדר",
       media: [
-        { type: 'image', src: '/src/images/1.jpeg' },
-        { type: 'image', src: '/src/images/2.jpeg' },
-        { type: 'image', src: '/src/images/3.jpeg' },
-        { type: 'image', src: '/src/images/4.jpeg' },
-        { type: 'image', src: '/src/images/5.jpeg' }
+        { type: 'image', src: '/images/1.jpeg' },
+        { type: 'image', src: '/images/2.jpeg' },
+        { type: 'image', src: '/images/3.jpeg' },
+        { type: 'image', src: '/images/4.jpeg' },
+        { type: 'image', src: '/images/5.jpeg' }
       ]
     },
     {
@@ -29,12 +29,12 @@ function ArticlesPage() {
       date: "17.11.2025",
       readTime: "6 דקות קריאה",
       url: "https://www.mako.co.il/men-men_news/Article-0994ebc0ed09a91027.htm",
-      image: "/src/images/8.jpeg",
+      image: "/images/8.jpeg",
       summary: "תושבי רתמים, כרמית, רביבים ועומר מתארים לילות של פחד והפקרות. ביקורת חריפה על התנהלות המשטרה והקריסה המתמשכת של החוק והסדר באזור",
       media: [
-        { type: 'video', src: '/src/images/6.mp4', poster: '/src/images/8.jpeg' },
-        { type: 'video', src: '/src/images/7.mp4', poster: '/src/images/8.jpeg' },
-        { type: 'image', src: '/src/images/8.jpeg' }
+        { type: 'video', src: '/images/6.mp4', poster: '/images/8.jpeg' },
+        { type: 'video', src: '/images/7.mp4', poster: '/images/8.jpeg' },
+        { type: 'image', src: '/images/8.jpeg' }
       ]
     },
     {

@@ -6,22 +6,22 @@ function About() {
   const [imageIndex, setImageIndex] = useState(0)
 
   const galleryImages = [
-    '/src/images/can11.jpeg',
-    '/src/images/about1.webp',
-    '/src/images/about2.webp',
-    '/src/images/about3.webp',
-    '/src/images/about4.webp',
-    '/src/images/about5.webp',
-    '/src/images/about6.webp',
-    '/src/images/about7.webp',
-    '/src/images/about8.webp',
-    '/src/images/about9.webp',
-    '/src/images/about10.webp',
-    '/src/images/about11.webp',
-    '/src/images/about13.webp',
-    '/src/images/about14.webp',
-    '/src/images/about15.webp',
-    '/src/images/about16.webp'
+    '/images/can11.jpeg',
+    '/images/about1.webp',
+    '/images/about2.webp',
+    '/images/about3.webp',
+    '/images/about4.webp',
+    '/images/about5.webp',
+    '/images/about6.webp',
+    '/images/about7.webp',
+    '/images/about8.webp',
+    '/images/about9.webp',
+    '/images/about10.webp',
+    '/images/about11.webp',
+    '/images/about13.webp',
+    '/images/about14.webp',
+    '/images/about15.webp',
+    '/images/about16.webp'
   ]
 
   const openLightbox = (index) => {
@@ -49,7 +49,7 @@ function About() {
     <div className="about">
       <div className="about-hero">
         <div className="hero-content">
-          <img src="/src/images/morede.jpg" alt="מור אדרי" className="hero-profile-image" />
+          <img src="/images/morede.jpg" alt="מור אדרי" className="hero-profile-image" />
           <div className="hero-text">
             <h1 className="about-hero-title">מור אדרי</h1>
             <p className="about-hero-subtitle">עורכת דין | יועצת תקשורת ואסטרטגיה | מרצה ומובילת דעת קהל בדרום</p>
@@ -167,13 +167,13 @@ function About() {
         <h2 className="certificates-title">תעודות והכשרות</h2>
         <div className="certificates-flow">
           <div className="certificate-item">
-            <img src="/src/images/t1.webp" alt="תעודה 1" className="certificate-img" />
+            <img src="/images/t1.webp" alt="תעודה 1" className="certificate-img" />
           </div>
           <div className="certificate-item">
-            <img src="/src/images/t2.webp" alt="תעודה 2" className="certificate-img" />
+            <img src="/images/t2.webp" alt="תעודה 2" className="certificate-img" />
           </div>
           <div className="certificate-item">
-            <img src="/src/images/t3.webp" alt="תעודה 3" className="certificate-img" />
+            <img src="/images/t3.webp" alt="תעודה 3" className="certificate-img" />
           </div>
         </div>
       </div>
