@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -12,17 +12,33 @@ import Support from './pages/Support'
 import Accessibility from './pages/Accessibility'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
+import BusinessCard from './pages/BusinessCard'
 import WeeklyStory from './components/WeeklyStory'
 import ChatBot from './components/ChatBot'
 import Footer from './components/Footer'
 import { FaFacebookF, FaTwitter, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home')
+  const getInitialPage = () => {
+    const path = window.location.pathname.slice(1)
+    return path || 'home'
+  }
+
+  const [currentPage, setCurrentPage] = useState(getInitialPage())
   const [menuOpen, setMenuOpen] = useState(false)
   const [showStory, setShowStory] = useState(false)
   const [mediaDropdownOpen, setMediaDropdownOpen] = useState(false)
   const [closeTimeout, setCloseTimeout] = useState(null)
+
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname.slice(1)
+      setCurrentPage(path || 'home')
+    }
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
 
   const handleNavigate = (page) => {
     setCurrentPage(page)
@@ -30,6 +46,9 @@ function App() {
     setShowStory(false)
     setMediaDropdownOpen(false)
     if (closeTimeout) clearTimeout(closeTimeout)
+
+    const newPath = page === 'home' ? '/' : `/${page}`
+    window.history.pushState({}, '', newPath)
   }
 
   const handleMouseEnter = () => {
@@ -76,6 +95,8 @@ function App() {
         return <Privacy />
       case 'terms':
         return <Terms />
+      case 'bc':
+        return <BusinessCard />
       default:
         return <Home onNavigate={setCurrentPage} />
     }
