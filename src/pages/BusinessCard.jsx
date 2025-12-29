@@ -23,7 +23,7 @@ function BusinessCard() {
           <div className="card-header">
             <div className="profile-image-wrapper">
               <img
-                src="src/images/MOR.webp"
+                src="/images/MOR.webp"
                 alt="מור אדרי"
                 className="profile-image"
               />
