@@ -21,6 +21,13 @@ function BusinessCard() {
       <div className="business-card-container">
         <div className="business-card">
           <div className="card-header">
+            <div className="compass-icon-container">
+              <img
+                src="/images/ICON1.png"
+                alt="לוגו המצפן הדרומי"
+                className="compass-icon"
+              />
+            </div>
             <div className="profile-image-wrapper">
               <img
                 src="/images/MOR.webp"
